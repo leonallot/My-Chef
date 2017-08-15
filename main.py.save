@@ -1,0 +1,26 @@
+from flask import Flask, request
+
+app = Flask(__name__)
+
+@app.route('/', methods=['Get'])
+def index():
+	return "home page comes here"
+
+@app.route('/menu/', methods=['Get'])
+def menu():
+	return "see our menu"
+
+@app.route('/cart/', methods=['Get'])
+def cart():
+	return "display cart content"
+
+@app.route('/cart/order', methods=['Post'])
+def order():
+	return "nothin here now"
+
+
+def main():
+	app.run(debug=True, port=8000)
+
+if __name__=="__main__":
+	main()

@@ -1,0 +1,27 @@
+{% extends "skeleton.html" %}
+
+{% block content %}
+<div class="row">
+	<div class="col-md-4">
+	<div class="container">
+		<p class="heading">BreakFast</p>
+		<ul>
+			{% for item in breakfast %}
+				<li role="presentation">{{item[0]}}<li>
+			{% endfor %}
+		</ul>
+	</div>
+	</div>
+	<div class="col-md-4">
+        <div class="container">
+                <p class="heading">Salads</p>
+                <ul>
+                        {% for item in salads %}
+                                <li>{{item}}<li>
+                        {% endfor %}
+                </ul>
+        </div>
+        </div>
+
+</div>
+{% endblock %}
