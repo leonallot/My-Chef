@@ -4,20 +4,21 @@
 <div class="row">
 	<div class="col-md-4">
 	<div class="container">
-		<p class="heading">BreakFast</p>
-		<ul>
-			{% for item in breakfast %}
-				<li role="presentation">{{item[0]}}<li>
-			{% endfor %}
-		</ul>
+		<p class="heading"><h3>Breakfast</h3></p>
+                <ul class="list">
+                        {% for item in breakfast %}
+                              <li class="menu lists"><h4>{{item[0]}}</h4><h6>price: Ghc{{item[2]}}0</h6><a href="/cart/add/{{item[3]}}">add to cart</a></li>
+                        {% endfor %}
+                </ul>
+
 	</div>
 	</div>
 	<div class="col-md-4">
         <div class="container">
-                <p class="heading">Salads</p>
-                <ul>
+                <p class="heading"><h3>Salads</h3></p>
+                <ul class="list">
                         {% for item in salads %}
-                                <li>{{item}}<li>
+                              <li class="menu lists"><h4>{{item[0]}}</h4><h6>price: Ghc{{item[2]}}0</h6><a href="/cart/add/{{item[3]}}">add to cart</a></li>
                         {% endfor %}
                 </ul>
         </div>
