@@ -1,0 +1,26 @@
+import MySQLdb as db
+
+class DBManager:
+	def __init__(self):
+		self.db_con = db.connect('localhost','root','carrot24','Chef')
+		self.cursor = self.db_con.cursor()
+		
+	def getMeals(self,category=False):
+		if category:
+			self.cursor.execute("select * from meal where category='%s'"%category)
+		else:
+			self.cursor.execute("select * from meal")
+		tray = self.cursor.fetchall()
+		result = []
+		for item in tray:
+			result.append([str(item[0]),str(item[1]),float(item[2]),int(item[3])])
+		return result
+
+	def addToCart(self,username,item):
+		self.cursor.execute('insert into cart(user_id, meal_id) values ("%s", %s)'%(username,item))
+		self.db_con.commit()
+
+	def getCartContent(self,username):('select ml.name, mea')
+
+	def __exit__(self):
+		self.db_con.close()
